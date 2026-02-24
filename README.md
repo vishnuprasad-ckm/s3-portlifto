@@ -31,7 +31,7 @@ Simply open `index.html` in your browser.
 
 ### Option 2: Local Server (Recommended)
 ```bash
-cd personal
+cd s3-portlifto
 python3 -m http.server 8000
 ```
 Then visit: http://localhost:8000
