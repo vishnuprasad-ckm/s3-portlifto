@@ -15,7 +15,7 @@ A modern, interactive portfolio website for DevOps engineers. Built with HTML, C
 ## Project Structure
 
 ```
-personal/
+s3-portlifto/
 ├── index.html          # Main HTML structure
 ├── styles.css          # All styling and responsive design
 ├── script.js           # Interactive features and animations
