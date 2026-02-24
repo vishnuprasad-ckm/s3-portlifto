@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="DevOps engineer portfolio focused on reliability, automation, and cloud delivery." />
+    <title>Vishnuprasad M | DevOps Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb--one" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--two" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav">
+        <a class="logo" href="#top">Vishnuprasad M</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact" class="btn btn--sm">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-content" data-reveal>
+          <p class="eyebrow">DevOps Engineer</p>
+          <h1>
+            I build resilient delivery systems that keep products fast, secure, and always on.
+          </h1>
+          <p class="lead">
+            Focused on AWS, infrastructure as code, and high-performance CI/CD. I help teams ship with
+            confidence by automating the boring stuff and instrumenting what matters.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn btn--ghost" href="#contact">Start a Conversation</a>
+          </div>
+          <div class="hero-stats" data-reveal>
+            <div class="stat">
+              <span class="stat-value" data-count="3.5">0</span>
+              <span class="stat-label">Years experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" data-count="100">0</span>
+              <span class="stat-label">Pipelines shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" data-count="99.95">0</span>
+              <span class="stat-label">Uptime delivered</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-portrait" data-reveal>
+          <img src="assets/hero-avatar.png" alt="Masked engineer with laptop illustration" />
+        </div>
+        <div class="hero-card" data-reveal>
+          <div class="card-header">
+            <span>Current focus</span>
+            <span class="tag">2026</span>
+          </div>
+          <ul>
+            <li>Platform reliability and observability</li>
+            <li>Cloud cost optimization and guardrails</li>
+            <li>Self-service environments for teams</li>
+            <li>Secure pipelines and policy as code</li>
+          </ul>
+          <div class="card-footer">
+            <span>Based in India</span>
+            <span>Open to remote</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2>Engineering reliable platforms with a product mindset.</h2>
+        </div>
+        <div class="about-grid">
+          <p data-reveal>
+            I partner with engineering teams to create delivery platforms that reduce friction and boost
+            release velocity. My approach blends infrastructure automation, security by default, and
+            pragmatic reliability practices so teams can focus on building features.
+          </p>
+          <div class="about-cards" data-reveal>
+            <div class="mini-card">
+              <h3>Reliability first</h3>
+              <p>SLIs, SLOs, and error budgets baked into delivery workflows.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Automation at scale</h3>
+              <p>GitOps, pipelines, and golden paths that move fast and stay safe.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Cloud savvy</h3>
+              <p>AWS-native builds with cost observability and security guardrails.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section section--accent">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Toolkit</p>
+          <h2>Tooling and platforms I deliver with.</h2>
+        </div>
+        <div class="skills-grid" data-reveal>
+          <div class="skill">
+            <h3>Cloud</h3>
+            <p>AWS (primary), with lighter experience across Azure and GCP.</p>
+          </div>
+          <div class="skill">
+            <h3>Infrastructure</h3>
+            <p>Terraform, CloudFormation, Ansible, Helm.</p>
+          </div>
+          <div class="skill">
+            <h3>CI/CD</h3>
+            <p>GitHub Actions, GitLab CI, Jenkins, Argo CD, reusable workflows.</p>
+          </div>
+          <div class="skill">
+            <h3>Observability</h3>
+            <p>Prometheus, Grafana, Loki, Cloudwatch.</p>
+          </div>
+          <div class="skill">
+            <h3>Security</h3>
+            <p>Policy as code, secrets management, image scanning, compliance.</p>
+          </div>
+          <div class="skill">
+            <h3>Languages</h3>
+            <p>Bash, Python, YAML.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Projects</p>
+          <h2>Recent infrastructure and automation builds.</h2>
+        </div>
+        <div class="filter-bar" data-reveal>
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="delivery">Delivery</button>
+          <button class="chip" data-filter="platform">Platform</button>
+          <button class="chip" data-filter="security">Security</button>
+          <button class="chip" data-filter="observability">Observability</button>
+        </div>
+        <div class="projects-grid" data-reveal>
+          <article class="project" data-tags="delivery platform">
+            <div>
+              <h3>Golden Path CI/CD</h3>
+              <p>
+                Standardized pipelines with reusable actions, policy checks, and ephemeral test
+                environments for 20+ services.
+              </p>
+            </div>
+            <span class="project-meta">GitHub Actions • Terraform • EKS</span>
+          </article>
+          <article class="project" data-tags="platform observability">
+            <div>
+              <h3>Reliability Command Center</h3>
+              <p>
+                Unified monitoring stack with SLO dashboards, automated alerts, and incident runbooks.
+              </p>
+            </div>
+            <span class="project-meta">Grafana • Loki • PagerDuty</span>
+          </article>
+          <article class="project" data-tags="security delivery">
+            <div>
+              <h3>Secure Artifact Supply</h3>
+              <p>
+                Automated image scanning, SBOM generation, and signed releases for compliance-ready
+                shipping.
+              </p>
+            </div>
+            <span class="project-meta">Sigstore • Trivy • OPA</span>
+          </article>
+          <article class="project" data-tags="platform">
+            <div>
+              <h3>Multi-account AWS Landing Zone</h3>
+              <p>
+                Built a secure multi-account foundation with guardrails, billing visibility, and network
+                segmentation.
+              </p>
+            </div>
+            <span class="project-meta">AWS Control Tower • Terraform</span>
+          </article>
+          <article class="project" data-tags="observability">
+            <div>
+              <h3>Telemetry at Scale</h3>
+              <p>
+                Implemented OpenTelemetry pipelines to trace high-volume services with low cardinality
+                control.
+              </p>
+            </div>
+            <span class="project-meta">OpenTelemetry • Tempo • Prometheus</span>
+          </article>
+          <article class="project" data-tags="delivery security">
+            <div>
+              <h3>Policy as Code Gate</h3>
+              <p>
+                Created deployment guardrails using OPA to ensure least privilege and encrypted storage.
+              </p>
+            </div>
+            <span class="project-meta">OPA • Conftest • GitLab CI</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section section--accent">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Experience</p>
+          <h2>Teams I have supported and scale I have delivered.</h2>
+        </div>
+        <div class="timeline" data-reveal>
+          <div class="timeline-item">
+            <div class="timeline-date">2025 - Present</div>
+            <div>
+              <h3>DevOps Engineer, Urolime Technologies</h3>
+              <p>
+                Worked on multiple dedicated Projects, Led and guided teams on different projects, cut infra cost by 15%, configured highly secure environments, and established SLO-driven
+                incident response.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2023 - 2025</div>
+            <div>
+              <h3>Junior DevOps Engineer, Urolime Technologies</h3>
+              <p>
+                Migrated critical workloads to AWS, automated infrastructure with Terraform, and
+                implemented security scanning in CI.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022 - 2023</div>
+            <div>
+              <h3>Junior Engineer, Urolime Technologies</h3>
+              <p>
+                Built CI/CD pipelines for microservices, introduced container orchestration, and
+                improved observability coverage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2>Lets build your next reliable release.</h2>
+        </div>
+        <div class="contact-grid" data-reveal>
+          <div>
+            <p>
+              I am available for DevOps consulting, platform audits, and part-time roles. Share your
+              goals and I will respond within 24 hours.
+            </p>
+            <div class="contact-cards">
+              <div class="mini-card">
+                <h3>Email</h3>
+                <p>vishnu2003prasad@gmail.com</p>
+              </div>
+              <div class="mini-card">
+                <h3>LinkedIn</h3>
+                <p>www.linkedin.com/in/vishnuprasad-m-0946b1238</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@email.com" />
+            </label>
+            <label>
+              Project details
+              <textarea name="message" rows="4" placeholder="Tell me about your infrastructure goals."></textarea>
+            </label>
+            <button class="btn" type="button">Send message</button>
+            <p class="form-note">This is a static form. Swap with your form handler.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Designed and built by Vishnuprasad M.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
