@@ -12,39 +12,103 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Disable browser's automatic scroll restoration
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      
+      // Force scroll to top immediately
+      function forceScrollTop() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }
+      
+      // Scroll immediately
+      forceScrollTop();
+      
+      // Also scroll when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', forceScrollTop);
+      }
+      
+      // And when window loads
+      window.addEventListener('load', forceScrollTop);
+      
+      // Extra attempts with delays
+      setTimeout(forceScrollTop, 0);
+      setTimeout(forceScrollTop, 100);
+      setTimeout(forceScrollTop, 500);
+    </script>
   </head>
   <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="eve-robot" id="eveRobot" aria-hidden="true">
+      <div class="eve-body-wrap">
+        <div class="eve-body">
+          <div class="eve-shell">
+            <div class="eve-face">
+              <span class="eve-eye left"></span>
+              <span class="eve-eye right"></span>
+            </div>
+            <div class="eve-glow"></div>
+          </div>
+          <div class="eve-arms">
+            <div class="eve-arm left"><span class="eve-hand"></span></div>
+            <div class="eve-arm right"><span class="eve-hand"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="eve-zzz" aria-hidden="true">Zzz</div>
+      <div class="eve-message" id="eveMessage"></div>
+    </div>
     <div class="bg-orb bg-orb--one" aria-hidden="true"></div>
     <div class="bg-orb bg-orb--two" aria-hidden="true"></div>
     <div class="bg-grid" aria-hidden="true"></div>
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
 
     <header class="site-header">
       <nav class="nav">
         <a class="logo" href="#top">Vishnuprasad M</a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact" class="btn btn--sm">Contact</a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact" class="btn btn--sm">Contact</a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M17 10.5C16.1 13.5 13.4 16 10 16C6.1 16 3 12.9 3 9C3 5.6 5.5 2.9 8.5 2C5.9 2.6 4 5 4 8C4 11.3 6.7 14 10 14C13 14 15.4 12.1 16 9.5C16.6 9.8 17 10.1 17 10.5Z" fill="currentColor"/>
+            </svg>
+          </button>
         </div>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="hero-content" data-reveal>
-          <p class="eyebrow">DevOps Engineer</p>
-          <h1>
-            I build resilient delivery systems that keep products fast, secure, and always on.
-          </h1>
-          <p class="lead">
-            Focused on AWS, infrastructure as code, and high-performance CI/CD. I help teams ship with
-            confidence by automating the boring stuff and instrumenting what matters.
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn btn--ghost" href="#contact">Start a Conversation</a>
+        <div class="hero-left">
+          <div class="hero-content" data-reveal>
+            <p class="eyebrow">DevOps Engineer</p>
+            <h1>
+              I build resilient delivery systems that keep products fast, secure, and always on.
+            </h1>
+            <p class="lead">
+              Focused on AWS, infrastructure as code, and high-performance CI/CD. I help teams ship with
+              confidence by automating the boring stuff and instrumenting what matters.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#projects">View Projects</a>
+              <a class="btn btn--ghost" href="#contact">Start a Conversation</a>
+            </div>
           </div>
           <div class="hero-stats" data-reveal>
             <div class="stat">
@@ -61,23 +125,25 @@
             </div>
           </div>
         </div>
-        <div class="hero-portrait" data-reveal>
-          <img src="assets/hero-avatar.png" alt="Masked engineer with laptop illustration" />
-        </div>
-        <div class="hero-card" data-reveal>
-          <div class="card-header">
-            <span>Current focus</span>
-            <span class="tag">2026</span>
+        <div class="hero-right">
+          <div class="hero-portrait" data-reveal>
+            <img src="assets/hero-avatar.png" alt="Masked engineer with laptop illustration" />
           </div>
-          <ul>
-            <li>Platform reliability and observability</li>
-            <li>Cloud cost optimization and guardrails</li>
-            <li>Self-service environments for teams</li>
-            <li>Secure pipelines and policy as code</li>
-          </ul>
-          <div class="card-footer">
-            <span>Based in India</span>
-            <span>Open to remote</span>
+          <div class="hero-card" data-reveal>
+            <div class="card-header">
+              <span>Current focus</span>
+              <span class="tag">2026</span>
+            </div>
+            <ul>
+              <li>Platform reliability and observability</li>
+              <li>Cloud cost optimization and guardrails</li>
+              <li>Self-service environments for teams</li>
+              <li>Secure pipelines and policy as code</li>
+            </ul>
+            <div class="card-footer">
+              <span>Based in India</span>
+              <span>Open to remote</span>
+            </div>
           </div>
         </div>
       </section>
@@ -256,6 +322,45 @@
         </div>
       </section>
 
+      <section id="certifications" class="section">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Certifications & Skills</p>
+          <h2>Validated expertise and continuous learning.</h2>
+        </div>
+        <div class="badges-grid" data-reveal>
+          <div class="badge-card">
+            <div class="badge-icon">☁️</div>
+            <h3>AWS Certified</h3>
+            <p>Solutions Architect</p>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">🐳</div>
+            <h3>Docker</h3>
+            <p>Containerization Expert</p>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">☸️</div>
+            <h3>Kubernetes</h3>
+            <p>CKA Certified</p>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">🔧</div>
+            <h3>Terraform</h3>
+            <p>Infrastructure as Code</p>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">🔐</div>
+            <h3>Security</h3>
+            <p>DevSecOps Practices</p>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">📊</div>
+            <h3>Monitoring</h3>
+            <p>Observability Stack</p>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="section">
         <div class="section-header" data-reveal>
           <p class="eyebrow">Contact</p>
@@ -270,11 +375,11 @@
             <div class="contact-cards">
               <div class="mini-card">
                 <h3>Email</h3>
-                <p>vishnu2003prasad@gmail.com</p>
+                <p><a href="mailto:vishnu2003prasad@gmail.com" class="contact-link">📧 Send me a mail</a></p>
               </div>
               <div class="mini-card">
                 <h3>LinkedIn</h3>
-                <p>www.linkedin.com/in/vishnuprasad-m-0946b1238</p>
+                <p><a href="https://www.linkedin.com/in/vishnuprasad-m-0946b1238" target="_blank" rel="noopener noreferrer" class="contact-link">🔗 Connect on LinkedIn</a></p>
               </div>
             </div>
           </div>
@@ -299,8 +404,14 @@
     </main>
 
     <footer class="footer">
-      <p>Designed and built by Vishnuprasad M.</p>
+      <p>The Page is still under development and some functions may not work properly yet, thanks for your patience.</p>
     </footer>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
 
     <script src="script.js"></script>
   </body>
